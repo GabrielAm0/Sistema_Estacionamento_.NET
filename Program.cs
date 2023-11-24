@@ -10,6 +10,37 @@ decimal precoInicial = Convert.ToDecimal(Console.ReadLine());
 Console.WriteLine("Agora digite o preço da hora:");
 decimal precoHora = Convert.ToDecimal(Console.ReadLine());
 
+while (true)
+{
+	Console.WriteLine("Escolha uma opção:");
+	Console.WriteLine("1. Adicionar Veículo");
+	Console.WriteLine("2. Remover Veículo");
+	Console.WriteLine("3. Listar Veículos");
+	Console.WriteLine("4. Sair");
+
+	int escolha = int.Parse(Console.ReadLine());
+
+	switch (escolha)
+	{
+		case 1:
+			AdicionarVeiculo(estacionamento);
+			break;
+		case 2:
+			RemoverVeiculo(estacionamento, precoInicial, precoHora);
+			break;
+		case 3:
+			ListarVeiculos(estacionamento);
+			break;
+		case 4:
+			Console.WriteLine("Saindo do sistema...");
+			return;
+		default:
+			Console.WriteLine("Opção inválida. Tente novamente.");
+			break;
+	}
+
+	Console.WriteLine();
+}
 
 
 static void AdicionarVeiculo(Estacionamento estacionamento)
@@ -59,37 +90,3 @@ static void ListarVeiculos(Estacionamento estacionamento)
 		}
 	}
 }
-
-
-while (true)
-{
-	Console.WriteLine("Escolha uma opção:");
-	Console.WriteLine("1. Adicionar Veículo");
-	Console.WriteLine("2. Remover Veículo");
-	Console.WriteLine("3. Listar Veículos");
-	Console.WriteLine("4. Sair");
-
-	int escolha = int.Parse(Console.ReadLine());
-
-	switch (escolha)
-	{
-		case 1:
-			AdicionarVeiculo(estacionamento);
-			break;
-		case 2:
-			RemoverVeiculo(estacionamento, precoInicial, precoHora);
-			break;
-		case 3:
-			ListarVeiculos(estacionamento);
-			break;
-		case 4:
-			Console.WriteLine("Saindo do sistema...");
-			return;
-		default:
-			Console.WriteLine("Opção inválida. Tente novamente.");
-			break;
-	}
-
-	Console.WriteLine();
-}
-
